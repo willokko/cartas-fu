@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Cartas de Equipamento</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Agbalumo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="equipamentos.css">
+
+    <link rel="stylesheet" href="layout-editor.css">
+</head>
+<body class="min-h-screen text-gray-800 p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+
+        <div class="bg-indigo-900 text-white p-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold font-['Agbalumo'] tracking-wider">Forja de Equipamentos Avançados</h1>
+                    <p class="text-indigo-200 mt-2 text-sm">Crie cartas com elementos, níveis e descrições detalhadas.</p>
+                </div>
+
+                <nav class="flex gap-2 flex-wrap justify-center">
+                    <a href="index.html" class="px-4 py-2 rounded-lg bg-indigo-700 text-indigo-100 font-medium text-sm border border-indigo-500 hover:bg-indigo-600 transition-colors">Acessórios</a>
+                    <a href="equipamentos.html" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium text-sm border border-indigo-400">Equipamentos</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 md:p-10">
+            
+            <!-- Lado Esquerdo: Formulário (Ocupa 5 colunas em telas grandes) -->
+            <div class="lg:col-span-5 space-y-5">
+                
+                <!-- Nome -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Nome do Item</label>
+                    <input type="text" id="nameInput" placeholder="Ex: Rapieira" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Imagem do dispositivo -->
+                    <div>
+                        <label for="imageInput" class="block text-sm font-semibold text-gray-700 mb-1">Imagem do Item</label>
+                        <input type="file" id="imageInput" accept="image/*"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+
+                    <!-- Preço -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Preço</label>
+                        <input type="text" id="priceInput" placeholder="Ex: 200 z" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                </div>
+
+                <!-- Elemento -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Elemento</label>
+                    <select id="elementInput" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <option value="">Sem Dano / Nenhum</option>
+                        <option value="⚔️">Físico (⚔️)</option>
+                        <option value="🔥">Fogo (🔥)</option>
+                        <option value="❄️">Gelo (❄️)</option>
+                        <option value="🪨">Terra (🪨)</option>
+                        <option value="💨">Ar (💨)</option>
+                        <option value="⚡">Raio (⚡)</option>
+                        <option value="✨">Luz (✨)</option>
+                        <option value="🌑">Trevas (🌑)</option>
+                        <option value="🧪">Veneno (🧪)</option>
+                    </select>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-4 bg-gray-50 space-y-3">
+                    <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">Efeitos Especiais</h3>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Efeito Base (Lvl 0 / Sem efeitos)</label>
+                        <input type="text" id="lvlBaseInput" placeholder="Ex: Sem efeitos especiais" 
+                            class="w-full px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Lvl 4</label>
+                        <input type="text" id="lvl4Input" placeholder="Efeito no lvl 4" 
+                            class="w-full px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Lvl 10</label>
+                        <input type="text" id="lvl10Input" placeholder="Efeito no lvl 10" 
+                            class="w-full px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Lvl 20</label>
+                        <input type="text" id="lvl20Input" placeholder="Efeito no lvl 20" 
+                            class="w-full px-3 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                </div>
+
+                <!-- Descrição -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Descrição</label>
+                    <textarea id="descInput" rows="3" placeholder="Ex: Accuracy: [Dex + Sab] +1&#10;Dano: [Hr + 6]" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 flex flex-col items-center justify-start bg-slate-100 rounded-xl p-6 border border-slate-200">
+                
+                <div class="w-full flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-semibold text-slate-700 uppercase tracking-wider">Preview da Carta</h2>
+                    <button id="downloadBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition-colors flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Baixar Carta
+                    </button>
+                </div>
+                
+                <div class="preview-wrapper">
+                    <!-- O Card em si -->
+                    <div class="card-container card-font" id="captureArea">
+                        <div class="card-name" id="cardName">Rapieira</div>
+                        
+                        <div class="card-middle-row">
+                            <div class="card-image-wrapper">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="cardImg" class="card-image" alt="">
+                            </div>
+                            <div class="card-price" id="cardPrice">200 z</div>
+                        </div>
+                        
+                        <!-- Elemento Círculo Direita -->
+                        <div class="card-element-circle" id="cardElement">
+                            <img id="cardElementImg" src="" alt="elemento" class="card-element-image">
+                        </div>
+
+                        <!-- Tabela Lvl -->
+                        <div class="card-effect effect-base" id="cardLvlBase">Sem efeitos especiais</div>
+                        <div class="card-effect effect-lvl4" id="cardLvl4"></div>
+                        <div class="card-effect effect-lvl10" id="cardLvl10"></div>
+                        <div class="card-effect effect-lvl20" id="cardLvl20"></div>
+
+                        <div class="card-description" id="cardDesc">Accuracy: [Dex + Sab] +1<br>Dano: [Hr + 6]</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="card-export.js"></script>
+    <script src="equipamentos.js"></script>
+    <script src="layout-editor.js"></script>
+</body>
+</html>

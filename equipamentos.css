@@ -1,0 +1,372 @@
+body {
+    background-color: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+}
+
+.card-font {
+    font-family: 'Agbalumo', system-ui;
+    color: #000000;
+}
+
+.card-container {
+    width: 298px;
+    height: 393px;
+    background-image: url('Armas players(4).png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.preview-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card-name {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14.3px;
+    line-height: 1.2;
+}
+
+.card-middle-row {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.card-image-wrapper {
+    width: 51px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    width: 51px;
+    height: auto;
+    max-height: 51px;
+    object-fit: contain;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.card-price {
+    font-size: 19.1px;
+    font-weight: bold;
+}
+
+.card-element-circle {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-element-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    filter: none;
+}
+
+.card-element-circle.empty {
+    display: none;
+}
+
+.card-effect {
+    position: absolute;
+    left: 30px;
+    width: 238px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5px;
+    height: 25px;
+}
+
+.effect-base {
+    top: 110px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.effect-lvl4 {
+    top: 145px;
+    height: 22px;
+}
+
+.effect-lvl10 {
+    top: 170px;
+    height: 22px;
+}
+
+.effect-lvl20 {
+    top: 195px;
+    height: 22px;
+}
+
+.card-description {
+    position: absolute;
+    top: 220px;
+    left: 15px;
+    width: 268px;
+    height: 170px;
+    padding: 5px 8px;
+    font-size: 10px;
+    text-align: left;
+    line-height: 1.3;
+    white-space: pre-wrap;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+.card-container .card-middle-row { position: static; }
+
+.card-container .card-name {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    left: 97px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 113px;
+    height: 29px;
+    font-size: 20px;
+    line-height: 22px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    text-align: left;
+    top: 45px;
+}
+
+.card-container .card-image-wrapper {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 45px;
+    right: auto;
+    bottom: auto;
+    left: 25px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 61px;
+    height: 61px;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.card-container .card-price {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 70px;
+    right: auto;
+    bottom: auto;
+    left: 100px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 90px;
+    height: 28.65px;
+    font-size: 19.1px;
+    line-height: 28.65px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.card-container .card-description {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 280px;
+    right: auto;
+    bottom: auto;
+    left: 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 231px;
+    height: 87px;
+    font-size: 19px;
+    line-height: 21px;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+}
+
+.card-container .card-element-circle {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 63px;
+    right: auto;
+    bottom: auto;
+    left: 210px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.card-container .effect-base {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 132px;
+    right: auto;
+    bottom: auto;
+    left: 62px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 176px;
+    height: 36px;
+    font-size: 17px;
+    line-height: 15px;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.card-container .effect-lvl4 {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 174px;
+    right: auto;
+    bottom: auto;
+    left: 60px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 183px;
+    height: 24px;
+    font-size: 15px;
+    line-height: 14px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    text-align: left;
+}
+
+.card-container .effect-lvl10 {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 201px;
+    right: auto;
+    bottom: auto;
+    left: 60px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 183px;
+    height: 24px;
+    font-size: 15px;
+    line-height: 13.5px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    text-align: left;
+}
+
+.card-container .effect-lvl20 {
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    top: 228px;
+    right: auto;
+    bottom: auto;
+    left: 60px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: anywhere;
+    width: 183px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 13.5px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    text-align: left;
+}

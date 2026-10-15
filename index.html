@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Cartas RPG</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Agbalumo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout-editor.css">
+</head>
+<body class="min-h-screen text-gray-800 p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        <div class="bg-slate-800 text-white p-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold font-['Agbalumo'] tracking-wider">Forja de Cartas Mágicas</h1>
+                    <p class="text-slate-300 mt-2 text-sm">Preencha os campos abaixo para criar sua carta instantaneamente.</p>
+                </div>
+
+                <nav class="flex gap-2 flex-wrap justify-center">
+                    <a href="index.html" class="px-4 py-2 rounded-lg bg-slate-700 text-white font-medium text-sm border border-slate-600">Acessórios</a>
+                    <a href="equipamentos.html" class="px-4 py-2 rounded-lg bg-slate-600 text-slate-200 font-medium text-sm border border-slate-500 hover:bg-slate-500 transition-colors">Equipamentos</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-10">
+            
+            <!-- Lado Esquerdo: Formulário -->
+            <div class="min-w-0 space-y-6">
+                <div>
+                    <label for="nameInput" class="block text-sm font-medium text-gray-700 mb-1">Nome do Item</label>
+                    <input type="text" id="nameInput" placeholder="Ex: Anel de Fogo" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-colors">
+                </div>
+
+                <div>
+                    <label for="imageInput" class="block text-sm font-medium text-gray-700 mb-1">Foto do Item</label>
+                    <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="document.getElementById('imageInput').click()">
+                        <div class="space-y-1 text-center">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="flex text-sm text-gray-600 justify-center">
+                                <label for="imageInput" class="relative cursor-pointer bg-white rounded-md font-medium text-slate-600 hover:text-slate-500 focus-within:outline-none">
+                                    <span>Fazer upload de um arquivo</span>
+                                    <input id="imageInput" name="imageInput" type="file" class="sr-only" accept="image/*">
+                                </label>
+                            </div>
+                            <p class="text-xs text-gray-500">PNG, JPG, GIF até 10MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="priceInput" class="block text-sm font-medium text-gray-700 mb-1">Preço</label>
+                    <input type="text" id="priceInput" placeholder="Ex: 2500z" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-colors">
+                </div>
+
+                <div>
+                    <label for="descInput" class="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
+                    <textarea id="descInput" rows="4" placeholder="Ex: Você absorve dano de fogo, mas é vulnerável a dano de gelo." 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-colors"></textarea>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Preview da Carta -->
+            <div class="min-w-0 flex flex-col items-center justify-start bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <h2 class="text-lg font-semibold text-slate-700 mb-4 uppercase tracking-wider">Preview da Carta</h2>
+                
+                <div class="preview-wrapper">
+                    <!-- O Card -->
+                    <div class="card-container card-font" id="captureArea">
+                        <div class="card-name" id="cardName">Anel de Fogo</div>
+                        
+                        <div class="card-middle-row">
+                            <div class="card-image-wrapper">
+                                <!-- Imagem padrão transparente para não mostrar icone quebrado antes do upload -->
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="cardImg" class="card-image" alt="Item Image">
+                            </div>
+                            <div class="card-price" id="cardPrice">2500z</div>
+                        </div>
+
+                        <div class="card-description" id="cardDesc">Você Absorve dano de fogo, mas é Vulnerável a dano de gelo.</div>
+                    </div>
+                </div>
+                
+                <button id="downloadBtn" type="button" class="mt-4 bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                    Baixar PNG
+                </button>
+
+                <p class="text-xs text-slate-400 mt-4 text-center max-w-sm">
+                    Baixe a carta em PNG para preservar melhor a nitidez do pixel art.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="card-export.js"></script>
+    <script src="script.js"></script>
+    <script src="layout-editor.js"></script>
+</body>
+</html>
